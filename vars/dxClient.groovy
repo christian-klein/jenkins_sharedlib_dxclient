@@ -1,3 +1,4 @@
+
 def printConfig() {
     echo 'Configuration:'
     echo "   dxWPSCredentials: ${config.dxWPSCredentials}"
@@ -13,9 +14,8 @@ def printConfig() {
 }
 
 def call() {
-    Map config = [:]
-
     configFileProvider([configFile(fileId: 'dx-targets.yaml', variable: 'DXCLIENT_SETTINGS')]) {
+        Map config = [:]
         def fileConfig = readYaml(file: "$DXCLIENT_SETTINGS")
 
         fileConfig.environments.each { envName, envConfig ->
