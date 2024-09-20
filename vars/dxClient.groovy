@@ -1,5 +1,5 @@
 
-def printConfig() {
+def printConfig(Map config = [:]) {
     echo 'Configuration:'
     echo "   dxWPSCredentials: ${config.dxWPSCredentials}"
     echo "   dxWASCredentials: ${config.dxWASCredentials}"
@@ -37,7 +37,7 @@ def call() {
                 config['dxContextRoot'] = envConfig.dxContextRoot
                 config['contenthandlerPath'] = envConfig.contenthandlerPath
 
-                printConfig()
+                printConfig(config)
             }
         }
     }
