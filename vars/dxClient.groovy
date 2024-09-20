@@ -38,9 +38,9 @@ def call() {
                 config['contenthandlerPath'] = envConfig.contenthandlerPath
 
                 printConfig(config)
+
+                return config
             }
         }
     }
-
-    return config
 }
