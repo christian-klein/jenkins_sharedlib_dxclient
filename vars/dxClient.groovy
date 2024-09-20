@@ -16,7 +16,7 @@ def call() {
     Map config = [:]
 
     configFileProvider([configFile(fileId: 'dx-targets.yaml', variable: 'DXCLIENT_SETTINGS')]) {
-        def fileConfig = readYaml(file: $DXCLIENT_SETTINGS)
+        def fileConfig = readYaml(file: "$DXCLIENT_SETTINGS")
 
         fileConfig.environments.each { envName, envConfig ->
             // Print the branch value
