@@ -12,7 +12,7 @@ def printConfig() {
     echo "   contenthandlerPath: ${config.contenthandlerPath}"
 }
 
-def call(Map config = [:]) {
+def call() {
     Map config = [:]
 
     configFileProvider([configFile(fileId: 'dx-targets.yaml', variable: 'DXCLIENT_SETTINGS')]) {
