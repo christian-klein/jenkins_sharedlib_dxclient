@@ -41,7 +41,7 @@ def call() {
                 
                 def DXCLIENT_TEST = credentials('dxclient-cred')
 
-                echo "DXCLIENT_TEST: ${DXCLIENT_TEST.UserName} ${DXCLIENT_TEST.Password}"
+                echo "DXCLIENT_TEST: ${DXCLIENT_TEST}"
                 
                 return config
             }
