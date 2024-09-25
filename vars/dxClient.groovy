@@ -40,15 +40,14 @@ def call() {
                 printConfig(config)
                 
                 withCredentials([usernamePassword(credentialsId: 'dxclient-cred', usernameVariable: 'DXCLIENT_USER', passwordVariable: 'DXCLIENT_PASS')]) {
-                    echo "DXCLIENT_USER: ${env.DXCLIENT_USER}"
-                    echo "DXCLIENT_PASS: ${env.DXCLIENT_PASS}"
+                    echo 'DXCLIENT_USER: $DXCLIENT_USER'
+                    echo 'DXCLIENT_PASS: $DXCLIENT_PASS'
                     
                     // Use the credentials as needed
                     // For example, you can add them to the config map
                     config['dxClientUser'] = env.DXCLIENT_USER
                     config['dxClientPass'] = env.DXCLIENT_PASS
                 }
-                echo "DXCLIENT_TEST: ${DXCLIENT_TEST}"
                 
                 return config
             }
