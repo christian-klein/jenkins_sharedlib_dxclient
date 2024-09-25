@@ -38,7 +38,11 @@ def call() {
                 config['contenthandlerPath'] = envConfig.contenthandlerPath
 
                 printConfig(config)
+                
+                def DXCLIENT_TEST = credentials('dxclient-cred')
 
+                echo "DXCLIENT_TEST: ${DXCLIENT_TEST.UserName} ${DXCLIENT_TEST.Password}"
+                
                 return config
             }
         }
